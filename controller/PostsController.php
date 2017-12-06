@@ -46,14 +46,14 @@ class PostsController extends Controller
         $posts = $this->dao->getAll();
         
         // redireciona para a página
-        header('Location:/pdo/index.php?controller=posts&action=index');
+        header('Location:?controller=posts&action=index');
     }
     
     public function edit($params = null)
     {
         if ($this->request == 'post') {
             if ($this->dao->update($params)) {
-                header('Location:/pdo/index.php?controller=posts&action=view&id='.$params['id']);
+                header('Location:?controller=posts&action=view&id='.$params['id']);
             }
         }
         
@@ -70,6 +70,6 @@ class PostsController extends Controller
         $posts = $this->dao->getAll();
         
         // redireciona para a página
-        header('Location:/pdo/index.php?controller=posts&action=index');
+        header('Location:?controller=posts&action=index');
     }
 }

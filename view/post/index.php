@@ -3,7 +3,7 @@
         <title>PDO + Patterns</title>
     </head>
     <body>
-        <form action="./index.php?controller=posts&action=add" method="post">
+        <form action="?controller=posts&action=add" method="post">
             <input type="text" name="title" placeholder="seu nome">
             <input type="text" name="content" placeholder="conteúdo">
             <input type="submit" name="Enviar">
@@ -15,8 +15,8 @@
                 echo '<tr>'
                     . '<td>' . $post->getTitle() . '</td>'
                     . '<td>' . $post->getContent() . '</td>'
-                    . '<td><a href="./index.php?controller=posts&action=edit&id='.$post->getId().'">Editar</td>'
-                    . '<td><a href="./index.php?controller=posts&action=remove&id='.$post->getId().'">Excluir</td>'
+                    . '<td><a href="?controller=posts&action=edit&id='.$post->getId().'">Editar</td>'
+                    . '<td><a href="?controller=posts&action=remove&id='.$post->getId().'">Excluir</td>'
                     . '</tr>';
             endforeach;
             ?>
