@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>PDO + Patterns</title>
+    </head>
+    <body>
+        <form action="./index.php?controller=posts&action=add" method="post">
+            <input type="text" name="title" placeholder="seu nome">
+            <input type="text" name="content" placeholder="conteúdo">
+            <input type="submit" name="Enviar">
+        </form>
+        <table border="1">
+            <tr><th>Título</th><th>Conteúdo</th><th colspan="2">Ações</th></tr>
+            <?php            
+            foreach($posts as $post):
+                echo '<tr>'
+                    . '<td>' . $post->getTitle() . '</td>'
+                    . '<td>' . $post->getContent() . '</td>'
+                    . '<td><a href="./index.php?controller=posts&action=edit&id='.$post->getId().'">Editar</td>'
+                    . '<td><a href="./index.php?controller=posts&action=remove&id='.$post->getId().'">Excluir</td>'
+                    . '</tr>';
+            endforeach;
+            ?>
+        </table>
+    </body>
+</html>

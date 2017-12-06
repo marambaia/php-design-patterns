@@ -17,3 +17,5 @@ Neste projeto foi usado o PDO para conexão com o banco de dados, sendo requisit
 No diretório “class“ existe o arquivo Connection.php onde está a string de conexão com o banco de dados e deve ser alterada conforme a configuração de seu sistema.
 
 Este projeto foi testado com Apache Web Server 2.0, PHP 5.6 e MySQL Server 5.7, contudo, futuras adaptações para a versão 7 do PHP já estão sendo desenvolvidas.
+
+Contribuições sempre são bem vindas!
