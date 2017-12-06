@@ -1,7 +1,7 @@
 <?php
 include_once('Controller.php');
-include_once('./dao/PostDAO.php');
-include_once('./model/Post.php');
+include_once('./dao/IndexDAO.php');
+include_once('./model/Index.php');
 
 /**
  * Description of IndexController
@@ -13,14 +13,14 @@ class IndexController extends Controller
     private $dao;
     
     public function __construct() {
-        $this->dao = new PostDAO();
+        $this->dao = new IndexDAO();
     }
     
     public function index()
     {
         // Resgatar todos os registros e retornar
-        $posts = $this->dao->getAll();
-        require_once('view/post/index.php');
+        $guestbook = $this->dao->getAll();
+        require_once('view/index/index.php');
     }
     
     public function view($params = null)
