@@ -1,8 +1,8 @@
 <?php
 
 // Design pattern FrontController + Command
-$controller = ucfirst(strtolower($_REQUEST['controller']));
-$action     = strtolower($_REQUEST['action']);
+$controller = isset($_REQUEST['controller'])?ucfirst(strtolower($_REQUEST['controller'])):'Index';
+$action     = isset($_REQUEST['action'])?strtolower($_REQUEST['action']):'index';
 
 require_once "controller/".$controller."Controller.php";
 $reflectionClass = new ReflectionClass($controller.'Controller');
