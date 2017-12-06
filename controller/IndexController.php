@@ -4,11 +4,11 @@ include_once('./dao/PostDAO.php');
 include_once('./model/Post.php');
 
 /**
- * Description of PostsController
+ * Description of IndexController
  *
  * @author Bernardo Albuquerque
  */
-class PostsController extends Controller
+class IndexController extends Controller
 {
     private $dao;
     
