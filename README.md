@@ -18,8 +18,8 @@ No diretório “class“ existe o arquivo Connection.php onde está a string de
 
 Você pode vê-lo em ação nos links:
 
-•	Guestbook: http://www.ceffsistemas.com.br/coding/php-design-patterns/ (Default route)
-•	Blog posts: http://www.ceffsistemas.com.br/coding/php-design-patterns/?controller=posts&action=index (Others routes)
+Guestbook: http://www.ceffsistemas.com.br/coding/php-design-patterns/ (Default route)
+Blog posts: http://www.ceffsistemas.com.br/coding/php-design-patterns/?controller=posts&action=index (Others routes)
 
 Este projeto foi testado com Apache Web Server 2.0, PHP 5.6 e MySQL Server 5.7, contudo, futuras adaptações para a versão 7 do PHP já estão sendo desenvolvidas.
 
