@@ -14,7 +14,7 @@
                 <?php
                 // (($guest[0]->getCountry_id() == $country->getId())?"selected":"")
                 foreach ($countries as $country):
-                    echo '<option value="'.$country->getId().'" '.(($guest[0]->getCountry_id() == $country->getId())?"selected":"").'>'.$country->getName_br().'</option>';
+                    echo '<option value="'.$country->getId().'" '.(($guest[0]->getCountry_id() == $country->getId())?"selected":"").'>'.utf8_encode($country->getName_br()).'</option>';
                 endforeach;
                 ?>
             </select>

@@ -14,7 +14,7 @@
                 <option value="">País de origem</option>
                 <?php
                 foreach ($countries as $country):
-                    echo '<option value="'.$country->getId().'">'.$country->getName_br().'</option>';
+                    echo '<option value="'.$country->getId().'">'.utf8_encode($country->getName_br()).'</option>';
                 endforeach;
                 ?>
             </select>

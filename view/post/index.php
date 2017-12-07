@@ -5,8 +5,8 @@
     </head>
     <body>
         <form action="?controller=posts&action=add" method="post">
-            <input type="text" name="title" placeholder="seu nome">
-            <input type="text" name="content" placeholder="conteúdo">
+            <input type="text" name="title" placeholder="Título">
+            <input type="text" name="content" placeholder="Conteúdo">
             <input type="submit" name="Enviar">
         </form>
         <table border="1">
