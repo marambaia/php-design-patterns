@@ -12,6 +12,7 @@ class Index
     private $last_name;
     private $email;
     private $gender;
+    private $country_id;
     private $name_br;
     private $created;
     private $modified;
@@ -34,6 +35,10 @@ class Index
 
     function getGender() {
         return $this->gender;
+    }
+    
+    function getCountry_id() {
+        return $this->country_id;
     }
 
     function getName_br() {
@@ -66,6 +71,10 @@ class Index
 
     function setGender($gender) {
         $this->gender = $gender;
+    }
+    
+    function setCountry_id($country_id) {
+        $this->country_id = $country_id;
     }
 
     function setName_br($name_br) {

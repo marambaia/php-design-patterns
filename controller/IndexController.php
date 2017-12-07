@@ -18,58 +18,67 @@ class IndexController extends Controller
     
     public function index()
     {
-        // Resgatar todos os registros e retornar
+        // Resgatar registros e disponibilizá-los na view
         $guestbook = $this->dao->getAll();
+        $countries = $this->dao->getCountries();
+        
         require_once('view/index/index.php');
     }
     
     public function view($params = null)
     {
-        $post = $this->dao->get($params['id']);
+        $guest = $this->dao->get($params['id']);
         
-        require_once('view/post/view.php');
+        require_once('view/index/view.php');
     }
     
     public function add($params = null)
     {
-        $title   = $params['title'];
-        $content = $params['content'];
+        $first_name = $params['first_name'];
+        $last_name  = $params['last_name'];
+        $email      = $params['email'];
+        $country_id = $params['country_id'];
+        $gender     = $params['gender'];
+        $created    = date("Y-m-d H:i:s");
 
-        // Instanciar um novo Post e setar informações
-        $post = new Post();
-        $post->setTitle($title);
-        $post->setContent($content);
+        // Instanciar um novo objeto Index
+        $index = new Index();
+        $index->setFirst_name($first_name);
+        $index->setLast_name($last_name);
+        $index->setEmail($email);
+        $index->setCountry_id($country_id);
+        $index->setGender($gender);
+        $index->setCreated($created);
 
-        $this->dao->insert($post);
+        $this->dao->insert($index);
         
-        //carrega os posts
-        $posts = $this->dao->getAll();
+        $guestbook = $this->dao->getAll();
         
         // redireciona para a página
-        header('Location:?controller=posts&action=index');
+        header('Location:?controller=index&action=index');
     }
     
     public function edit($params = null)
     {
         if ($this->request == 'post') {
             if ($this->dao->update($params)) {
-                header('Location:?controller=posts&action=view&id='.$params['id']);
+                header('Location:?controller=index&action=view&id='.$params['id']);
             }
         }
         
-        $post = $this->dao->get($params['id']);
+        $countries = $this->dao->getCountries();
+        $guest     = $this->dao->get($params['id']);
         
-        require_once('view/post/edit.php');
+        require_once('view/index/edit.php');
     }
     
     public function remove($params = null)
     {
         $this->dao->delete($params['id']);
         
-        //carrega os posts
-        $posts = $this->dao->getAll();
+        $guestbook = $this->dao->getAll();
         
         // redireciona para a página
-        header('Location:?controller=posts&action=index');
+        header('Location:?controller=index&action=index');
     }
 }
