@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>PDO + Patterns</title>
+        <meta charset="UTF-8">
     </head>
     <body>
         <form action="?controller=posts&action=edit" method="post">

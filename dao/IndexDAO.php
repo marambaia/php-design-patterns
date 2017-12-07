@@ -71,7 +71,7 @@ class IndexDAO extends DAO
     public function getCountries()
     {
         $stmt = $this->conn->query(
-            'SELECT id, name_br FROM pdo.countries'
+            'SELECT id, name_br FROM countries'
         );
  
         return $stmt->fetchAll(PDO::FETCH_CLASS,'Countries');
