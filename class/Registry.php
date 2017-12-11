@@ -1,11 +1,12 @@
 <?php
 /**
+ * Description of Registry
+ *
  * @author Bernardo Albuquerque
  */
 
 class Registry extends ArrayObject 
 {
-
     private static $instance;
 
     public function get( $key )
